@@ -19,14 +19,18 @@ spec:
       - name: fortuna
         image: filefrog/o-fortuna:latest
         command: ["/bin/sh", "-c"]
-        args: ["cp /var/auth/fortunesjs /fortunes.js;  node index.js"]
+        args: ["node index.js"]
         ports:
         - containerPort: 3000
         volumeMounts:
         - name: injected-secret-volume
-          mountPath: "/var/auth"
+          mountPath: /fortunes.js
+          subPath: fortunes.js
           readOnly: true
       volumes:
       - name: injected-secret-volume
         secret:
           secretName: fortuna-secrets 
+          items:
+          - key: fortunesjs
+            path: fortunes.js

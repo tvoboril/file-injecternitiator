@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: file-injecternitiator
+  name: file-injecternitiator
+  namespace: fortuna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: file-injecternitiator
+  template:
+    metadata:
+      labels:
+        app: file-injecternitiator
+    spec:
+      containers:
+      - name: fortuna
+        image: filefrog/o-fortuna:latest
+        command: ["/bin/sh", "-c"]
+        args: ["cp /var/auth/fortunesjs /fortunes.js;  node index.js"]
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: injected-secret-volume
+          mountPath: "/var/auth"
+          readOnly: true
+      volumes:
+      - name: injected-secret-volume
+        secret:
+          secretName: fortuna-secrets 

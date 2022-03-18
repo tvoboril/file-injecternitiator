@@ -5,6 +5,7 @@ metadata:
   namespace: fortuna
 data:
   key-replacer.sh: |
+    #!/bin/bash
     git clone $repo
     cp $inpt_file $outpt_file
     sed -i "s/$Key_Token_001/$Key_Token_001_new/" $outpt_file

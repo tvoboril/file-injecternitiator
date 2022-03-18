@@ -1,24 +1,11 @@
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: key-token
-  namespace: fortuna
-data:
-  Key_Token_001: There is no cow on the ice
-  Key_Token_002: Pretend to be an Englishman
-  Key_Token_003: Not my circus, not my monkeys
-  Key_Token_004: God gives nuts to the man with no teeth
-  Key_Token_005: A camel cannot see its own hump
----
 apiVersion: v1
 kind: Secret
 metadata:
   name: key-token-new
   namespace: fortuna
 data:
-  Key_Token_001_new: VGFsa2luZyBhYm91dCB0aGUgd29sZg==
-  Key_Token_002_new: VG8gc2hvdyB3aGVyZSB0aGUgY3JheWZpc2ggaXMgd2ludGVyaW5n
-  Key_Token_003_new: QSB3aGl0ZSBjcm93
-  Key_Token_004_new: VG8gcGxhbnQgYSBwaWcgb24gc29tZW9uZQ==
-  Key_Token_005_new: 0JrRg9C/0LjRgtC4INC60L7RgtCwINCyINC80ZbRiNC60YM=
+  FORTUNE_1: VGFsa2luZyBhYm91dCB0aGUgd29sZg==
+  FORTUNE_2: VG8gc2hvdyB3aGVyZSB0aGUgY3JheWZpc2ggaXMgd2ludGVyaW5n
+  FORTUNE_3: QSB3aGl0ZSBjcm93
+  FORTUNE_4: VG8gcGxhbnQgYSBwaWcgb24gc29tZW9uZQ==
+  FORTUNE_5: 0JrRg9C/0LjRgtC4INC60L7RgtCwINCyINC80ZbRiNC60YM=

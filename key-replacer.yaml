@@ -12,4 +12,5 @@ data:
     sed -i "s/$Key_Token_003/$Key_Token_003_new/" $outpt_file
     sed -i "s/$Key_Token_004/$Key_Token_004_new/" $outpt_file
     sed -i "s/$Key_Token_005/$Key_Token_005_new/" $outpt_file
+    print "⚡︎ mischief managed ⚡︎"
     exit

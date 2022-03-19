@@ -5,16 +5,19 @@ Replace env-notated strings with their variables
 
 This simple image will use the `envsubst` command from the gettext package to replace all strings "annotated like variables" with the enviromentals passed into the container, or with existing variables injected by kubernetes etc.
 
-This example will create new fortunes for the example node.js single page app: [O-Fortuna](https://github.com/jhunt/o-fortuna)
+This example will create new fortunes for the example node.js single page app: [O-Fortuna](https://github.com/jhunt/o-fortuna).
 
-In use, a file is prepared and inserted into the o-fortuna pod with the `old-file.yaml` configMap
-The new variables are base64 encoded and inseted with `secrets.yaml`
-The init container in `deployment.yaml` ingests the configMap and the secrets and then uses envsubst to generate a new file.  That new file is shared with actual container throught the use of an `emptyDir`
+In use, a file is prepared and inserted into the o-fortuna pod with the `old-file.yaml` configMap.
+
+The new variables are base64 encoded and inseted with `secrets.yaml`.
+
+The init container in `deployment.yaml` ingests the configMap and the secrets and then uses envsubst to generate a new file.  That new file is shared with actual container throught the use of an `emptyDir`.
+
 The new file is then copied into place from the shared dir to the actual config location.
 
 The docker image is built from: [Variable-Swap](https://github.com/tvoboril/variable-swap)
-and can be found: [Docker Hub](https://hub.docker.com/repository/docker/tomvoboril/variable-swap)
-and is available for multiple cpu architects.
+and can be found: [Docker Hub](https://hub.docker.com/repository/docker/tomvoboril/variable-swap).
+It is available for multiple cpu architects.
 
 
 `docker pull tomvoboril/variable-swap`

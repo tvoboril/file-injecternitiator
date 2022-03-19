@@ -4,16 +4,6 @@ metadata:
   name: key-replacer
   namespace: fortuna
 data:
-  key-replacer.sh: |
-    #!/bin/sh
-    #git clone $repo
-    cp $inpt_file $outpt_file
-    sed -i "s/\${FORTUNE_1}/${FORTUNE_1}/" $outpt_file
-    sed -i "s/\${FORTUNE_2}/${FORTUNE_2}/" $outpt_file
-    sed -i "s/\${FORTUNE_3}/${FORTUNE_3}/" $outpt_file
-    sed -i "s/\${FORTUNE_4}/${FORTUNE_4}/" $outpt_file
-    sed -i "s/\${FORTUNE_5}/${FORTUNE_5}/" $outpt_file
-    exit
   fortunes.js: |
     module.exports = [
      '${FORTUNE_1}',

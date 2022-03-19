@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: key-replacer
+  name: old-file
   namespace: fortuna
 data:
-  fortunes.js: |
+  old.file: |
     module.exports = [
      '${FORTUNE_1}',
      '${FORTUNE_2}',

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: key-replacer
+  namespace: fortuna
+data:
+  key-replacer.sh: |
+    #!/bin/bash
+    git clone $repo
+    cp $inpt_file $outpt_file
+    sed -i "s/$Key_Token_001/$Key_Token_001_new/" $outpt_file
+    sed -i "s/$Key_Token_002/$Key_Token_002_new/" $outpt_file
+    sed -i "s/$Key_Token_003/$Key_Token_003_new/" $outpt_file
+    sed -i "s/$Key_Token_004/$Key_Token_004_new/" $outpt_file
+    sed -i "s/$Key_Token_005/$Key_Token_005_new/" $outpt_file
+    exit
